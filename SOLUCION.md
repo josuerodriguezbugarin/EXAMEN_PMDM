@@ -18,3 +18,24 @@
 ## Test (20 puntos)
 - Realiza un número extenso de test unitarios para comprobar el funcionamiento de la máquina de estados.
 > Unos test para comprobar que me funcone los gestores de estados
+
+## Diagrama de estados
+
+```mermaid
+stateDiagram-v2
+    [*] --> Idle
+
+    Idle --> MovingUP: ?
+    MovingUP --> Idle: ?
+
+    Idle --> MovingDOWN: ?
+    MovingDOWN --> Idle: ?
+
+    Idle --> Error: fallo
+    MovingUP --> Error: fallo
+    MovingDOWN --> Error: fallo
+    Error --> Error: ?
+
+
+```
+> Basicamente el ascensor siempre estara en un estado de IDLE hasta que reciba la orden de que nivel quiere subir o bajar, una vez indicado que nivel es se cerraran la spuertas y se subira o se bajara, el ascensor tambien dara error si el usuario presiona el mismo boton del nivel al que quiere subir cuando ya esta en ese mismo nivel, ahi el ascensor abrira las puertas y volvera al estado de idle.
