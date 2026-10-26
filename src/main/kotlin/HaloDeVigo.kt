@@ -4,7 +4,7 @@ import org.example.HaloEstados.*
 import Boton
 
 object HaloDeVigo {//singleton que gestiona los estados
-    var nivel_actual: Int = 0
+var nivel_actual: Int = 0
     var botonPulsado: Boton? = null
     var currentState: HaloEstados = Idle //Estado actual
 
